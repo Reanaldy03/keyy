@@ -1,0 +1,240 @@
+
+---Open good GG
+
+require "Tool.櫃"
+--require"Bynze.confusion"
+local Not_name = {}
+function _Random(Table_name,Random_name,...)
+if not Not_name[Table_name] then
+_ENV[Table_name]={}
+Not_name[Table_name]=true
+end
+while(true)do
+x=_ENV[Random_name](...)
+if not _ENV[Table_name][x] then
+_ENV[Table_name][x]=x
+str=x
+break
+end
+end
+return(str)
+end
+Nam=function()
+return(math.random(0,99999))
+end
+Nac=function()
+return(math.random(-999999,999999))
+end
+Nameber=function(a)
+local mod=math.random(1,2)
+if mod==1 then 
+return math.random(10000,99999)
+elseif mod==2 then
+return math.random(-99999,-10000)
+end
+end
+zzz=math.random(1000,9999)
+local Rec=''
+function dom(Number)
+local mod=math.random(1,4)
+local p=math.random(100,999)
+local s=math.random(-999,-100)
+if mod==1 then
+local a=Number-p
+local b=_Random("Bynze","Nameber")
+local c=_Random("Bynze","Nameber")
+local pc=_Random("Bynze","Nam")
+local cp=_Random("Bynze","Nam")
+local xx=_Random("Bynze","Nac")
+local xb=_Random("Bynze","Nac")
+local xd=_Random("Bynze","Nac")
+local xe=_Random("Bynze","Nac")
+Rec=Rec..";while{K["..xx.."]}~={K["..xb.."]}do;lock["..b.."]="..a-zzz.." goto _"..pc.."_ end::_"..pc.."_::;while{K["..xd.."]}~={K["..xe.."]}do;lock["..c.."]="..p-zzz.." goto _"..cp.."_ end::_"..cp.."_::\n"
+return "Dead[lock["..b.."]]+Dead[lock["..c.."]]"
+elseif mod==2 then
+local a=Number+p
+local b=_Random("Bynze","Nameber")
+local c=_Random("Bynze","Nameber")
+local pc=_Random("Bynze","Nam")
+local cp=_Random("Bynze","Nam")
+local xx=_Random("Bynze","Nac")
+local xb=_Random("Bynze","Nac")
+local xd=_Random("Bynze","Nac")
+local xe=_Random("Bynze","Nac")
+Rec=Rec..";while{K["..xx.."]}~={K["..xb.."]}do;lock["..b.."]="..a-zzz.." goto _"..pc.."_ end::_"..pc.."_::;while{K["..xd.."]}~={K["..xe.."]}do;lock["..c.."]="..p-zzz.." goto _"..cp.."_ end::_"..cp.."_::\n"
+return "Dead[lock["..b.."]]-Dead[lock["..c.."]]"
+elseif mod==3 then
+local a=Number-s
+local b=_Random("Bynze","Nameber")
+local c=_Random("Bynze","Nameber")
+local pc=_Random("Bynze","Nam")
+local cp=_Random("Bynze","Nam")
+local xx=_Random("Bynze","Nac")
+local xb=_Random("Bynze","Nac")
+local xd=_Random("Bynze","Nac")
+local xe=_Random("Bynze","Nac")
+Rec=Rec..";while{K["..xx.."]}~={K["..xb.."]}do;lock["..b.."]="..a-zzz.." goto _"..cp.."_ end::_"..cp.."_::;while{K["..xd.."]}~={K["..xe.."]}do;lock["..c.."]="..s-zzz.." goto _"..pc.."_ end::_"..pc.."_::\n"
+return "Dead[lock["..b.."]]+Dead[lock["..c.."]]"
+elseif mod==4 then
+local a=Number+s
+local b=_Random("Bynze","Nameber")
+local c=_Random("Bynze","Nameber")
+local pc=_Random("Bynze","Nam")
+local cp=_Random("Bynze","Nam")
+local xx=_Random("Bynze","Nac")
+local xb=_Random("Bynze","Nac")
+local xd=_Random("Bynze","Nac")
+local xe=_Random("Bynze","Nac")
+Rec=Rec..";while{K["..xx.."]}~={K["..xb.."]}do;lock["..b.."]="..a-zzz.." goto _"..pc.."_ end::_"..pc.."_::;while{K["..xd.."]}~={K["..xe.."]}do;lock["..c.."]="..s-zzz.." goto _"..cp.."_ end::_"..cp.."_::\n"
+return "Dead[lock["..b.."]]-Dead[lock["..c.."]]"
+end
+end
+local A = gg.prompt({'Select Script:'}, {gg.getFile()}, {'file'}) 
+if not A then 
+    return os.exit()
+end
+local file = io.open(A[1]) 
+if not file then 
+    os.exit()
+end
+local data = file:read('*a') 
+file:close() 
+local Char_text = {}
+for i = 0,255 do
+	Char_text[i] = string.char(i)
+end
+local Ran_Zheng = {}
+local Char_text = table.concat(Char_text)
+function Ret_RanStr(len,Zhengze)
+	local len = len or 5
+	if len<0 then 
+		len = 1
+	elseif string.find(tostring(len),"%.") then
+		len = tonumber(string.gsub(tostring(len),"%.%d+"))
+	end
+	local result = ''
+	if not Zhengze then
+		Ran_text = Char_text
+	else
+		local Ran_text
+		if Ran_Zheng[Zhengze] then
+			Ran_text = Ran_Zheng[Zhengze]
+		else
+			Ran_text = string.gsub(Char_text,"[^".. Zhengze .."]"," ")
+			Ran_Zheng[Zhengze] = Ran_text
+		end
+	end
+	for i = 1, len do
+		result = result .. string.format("\\x%02x", string.byte(Ran_text,math.random(1,#Ran_text)))
+	end
+  return result
+end
+function BooIol(code)
+local Randomc,Ran_True,Ran_False,Ran_Bool
+function Randomc(num,bool)
+	if bool then
+		return math.random(num + 1,num*100)
+	else
+		return math.random(-num * #tostring(num),num - 1)
+	end
+end
+function Ran_True()
+	x = math.random(0,3)
+	if x == 0 then
+		local t1, t2 = Ret_RanStr(3), Ret_RanStr(1)
+		local t3 = table.concat(({t1,t2}))
+		return "\034"..t1.."\034 ~= \034"..t3.."\034"
+	elseif x == 1 then
+		local t1 = Ret_RanStr(3)
+		return "\034"..t1.."\034 == \034"..t1.."\034"
+	elseif x == 2 then
+		local t1 ,t2 = Randomc(math.random(1,99999),true), Randomc(math.random(1,99999))
+		local t3 = {t1,t2}
+		if math.random(1,2) == 1 then
+			return t1 .. ">" .. t2
+		else
+			return t1 .. ">=" .. t3[math.random(1,2)]
+		end
+	elseif x == 3 then
+		local t1 ,t2 = Randomc(math.random(1,99999),true), Randomc(math.random(1,99999))
+		local t3 = {t1,t2}
+		if math.random(1,2) == 1 then
+			return t2 .. "<" .. t1
+		else
+			return t2 .. "<=" .. t3[math.random(1,2)]
+		end
+	end
+end
+function Ran_False()
+	x = math.random(0,3)
+	if x == 0 then
+		local t1, t2 = Ret_RanStr(3), Ret_RanStr(1)
+		local t3 = table.concat(({t1,t2}))
+		return "\034"..t1.."\034 == \034"..t3.."\034"
+	elseif x == 1 then
+		local t1 = Ret_RanStr(3)
+		return "\034"..t1.."\034 ~= \034"..t1.."\034"
+	elseif x == 2 then
+		local t1 ,t2 = Randomc(math.random(1,99999),true), Randomc(math.random(1,99999))
+		local t3 = {t1,t2}
+		if math.random(1,2) == 1 then
+			return t2 .. ">" .. t3[math.random(1,2)]
+		else
+			return t2 .. ">=" .. t1
+		end
+	elseif x == 3 then
+		local t1 ,t2 = Randomc(math.random(1,99999),true), Randomc(math.random(1,99999))
+		local t3 = {t1,t2}
+		if math.random(1,2) == 1 then
+			return t1 .. "<" .. t3[math.random(1,2)]
+		else
+			return t1 .. "<=" .. t2
+		end
+	end
+end
+
+function Ran_Bool(boolean)
+    if boolean == true then
+        if math.random(0,1) == 0 then
+            return Ran_True()
+        else
+            return "not (" .. Ran_False() .. ")"
+        end
+    elseif boolean == false then
+        if math.random(0,1) == 0 then
+            return Ran_False()
+        else
+            return "not (" .. Ran_True() .. ")"
+        end
+    end
+end
+local BoolTab = {
+true,
+false,
+}
+
+for i = 1, #BoolTab do
+local boolStr = tostring(BoolTab[i])
+	code = string.gsub(code,"([^%w])".. boolStr .."([^%w])",function(x1,x2)
+		return x1.."("..Ran_Bool(BoolTab[i])..")"..x2
+	end)
+end
+return code
+end
+data = BooIol(data)
+function B(data) 
+    data = table.concat({string.byte(data, 1, -1)}, ',')
+        data=data:gsub("%d+",dom)
+    data = '(concat(' .. data .. '))' 
+    return data 
+end
+data = string.gsub(data, '\\n',"\n")
+data = string.gsub(data, '\39(.-)\39', B) 
+data = string.gsub(data, '\34(.-)\34', B)
+data = "lock={} goto a::b::\n"..data.."\ngoto c::a::"..Rec.."\nwhile{_ENV}~=(_ENV)do goto b end::c::"
+data = "local R={"..string.reverse(zzz).."}local K={} local sss=function()return(string.reverse(R[1]))end local Dead={}local char=string.char local To=table.unpack local concat=function(...)local data={...}return char(To(data))end setmetatable(Dead, {['_'..'_'..'i'..'n'..'d'..'e'..'x']=function(a, b)return (b)+(sss())end})setmetatable(K, {['_'..'_'..'i'..'n'..'d'..'e'..'x']=function(a, b)return(b)end})"..data
+data=string.gsub(data,"\n[\n%s\r\t]+","\n")
+--data=string.dump(load(data),true)
+
+local path = A[1] .. '.lua' 
+io.open(path, 'w'):write(data):close() 
